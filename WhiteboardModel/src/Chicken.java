@@ -8,10 +8,22 @@ class Chicken {
     private double hungerLevel = 50.0; // constraint: Between 0 and 100
     private boolean isAlive = true;
     private boolean isHungry = false;
+    private boolean isPregnant = false;
 
     public void speak() {
         System.out.println("Cluck! Cluck! Cluck!");
     }
+
+    public void date() {
+        System.out.println(this.name + " is going on a date...");
+        mate();
+    }
+
+    private void mate() {
+        this.isPregnant = true;
+    }
+
+
 
     public void eat() {
         System.out.println(this.name + " is eating...");
@@ -103,6 +115,14 @@ class Chicken {
 
     public void setHungry(boolean hungry) {
         isHungry = hungry;
+    }
+
+    public boolean isPregnant() {
+        return isPregnant;
+    }
+
+    public void setPregnant(boolean pregnant) {
+        isPregnant = pregnant;
     }
 
     // toString()
