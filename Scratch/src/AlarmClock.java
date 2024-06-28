@@ -5,10 +5,27 @@
 
 class AlarmClock {
     // properties or attributes - these are called "instance variables" or "fields" in Java
-    int snoozeInterval = 5;
+    private int snoozeInterval = 5;
 
     // functions or operations - these are called "methods" in Java
-    void snooze() {
+    public void snooze() {
         System.out.println("Snoozing for " + snoozeInterval + " minutes.");
+    }
+
+    public int getSnoozeInterval() {
+        return snoozeInterval;
+    }
+
+    public void setSnoozeInterval(int snoozeInterval) {
+        if (snoozeInterval < 10 || snoozeInterval >= 20) {
+            System.out.println("Snooze interval must be between 10 and 20.");
+        } else {
+            this.snoozeInterval = snoozeInterval;
+        }
+
+    }
+
+    public String toString() {
+        return "AlarmClock: snoozeInterval=" + snoozeInterval;
     }
 }

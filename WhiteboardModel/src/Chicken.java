@@ -30,4 +30,8 @@ class Chicken {
     void die() {
         System.out.println(this.name + " has died...");
     }
+
+    // accessor methods
+
+    // toString()
 }

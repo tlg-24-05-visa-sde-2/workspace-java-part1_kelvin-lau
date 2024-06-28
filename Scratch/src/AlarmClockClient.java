@@ -9,15 +9,18 @@ class AlarmClockClient {
     public static void main(String[] args) {
         // create an instance of AlarmClock
         AlarmClock clock1 = new AlarmClock();
-        clock1.snoozeInterval = 7;
+        clock1.setSnoozeInterval(-7); // this should not be allowed
 
         AlarmClock clock2 = new AlarmClock();
-        clock2.snoozeInterval = 10;
+        clock2.setSnoozeInterval(11);
 
         AlarmClock clock3 = new AlarmClock();
 
         clock1.snooze();
         clock2.snooze();
         clock3.snooze();
+        System.out.println();
+
+        System.out.println(clock1);
     }
 }
