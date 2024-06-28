@@ -33,5 +33,80 @@ class Chicken {
 
     // accessor methods
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getLegs() {
+        return legs;
+    }
+
+    public void setLegs(int legs) {
+        this.legs = legs;
+    }
+
+    public int getWings() {
+        return wings;
+    }
+
+    public void setWings(int wings) {
+        this.wings = wings;
+    }
+
+    public double getHungerLevel() {
+        return hungerLevel;
+    }
+
+    public void setHungerLevel(double hungerLevel) {
+        this.hungerLevel = hungerLevel;
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+    public boolean isHungry() {
+        return isHungry;
+    }
+
+    public void setHungry(boolean hungry) {
+        isHungry = hungry;
+    }
+
     // toString()
+    public String toString() {
+        return "Chicken [name=" + name + ", breed=" + breed + ", gender=" + gender + "]";
+    }
 }

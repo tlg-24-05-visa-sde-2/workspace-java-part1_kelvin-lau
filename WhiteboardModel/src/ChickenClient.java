@@ -1,17 +1,29 @@
 class ChickenClient {
     public static void main(String[] args) {
         Chicken chicken1 = new Chicken();
-        chicken1.name = "Lester";
+        chicken1.setName("Lester");
+        chicken1.setBreed("Silkie");
+        chicken1.setGender("Male");
+
         chicken1.speak();
 
-        System.out.println(chicken1.name + " has " + chicken1.legs + " legs.");
-        System.out.println(chicken1.name + " has " + chicken1.wings + " wings.");
+        System.out.println();
+
+        System.out.println(chicken1.getName() + " has " + chicken1.getLegs() + " legs.");
+        System.out.println(chicken1.getName() + " has " + chicken1.getWings() + " wings.");
         chicken1.loseLeg();
-        System.out.println(chicken1.name + " has " + chicken1.legs + " legs.");
-        System.out.println(chicken1.name + " has " + chicken1.wings + " wings.");
-        System.out.println(chicken1.name + "'s hunger level is: " + chicken1.hungerLevel);
+        System.out.println(chicken1.getName() + " has " + chicken1.getLegs() + " legs.");
+        System.out.println(chicken1.getName() + " has " + chicken1.getWings() + " wings.");
+
+        System.out.println();
+
+        System.out.println(chicken1.getName() + "'s hunger level is: " + chicken1.getHungerLevel());
         chicken1.eat();
-        System.out.println(chicken1.name + "'s hunger level is: " + chicken1.hungerLevel);
+        System.out.println(chicken1.getName() + "'s hunger level is: " + chicken1.getHungerLevel());
         chicken1.die();
+
+        System.out.println();
+
+        System.out.println(chicken1);
     }
 }
