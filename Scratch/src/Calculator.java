@@ -15,6 +15,14 @@ class Calculator {
     }
 
     /*
+     * Returns a random integer between 'min' and 'max' inclusive
+     */
+
+    int randomNum(int min, int max) {
+        return (int) (Math.random() * (max - min + 1)) + min;
+    }
+
+    /*
      * Returns a random integer between 1 and 11 (inclusive)
      * HINT: see a class called Math (in package java.lang), look for a helpful method here
      * NOTE: these methods are all static

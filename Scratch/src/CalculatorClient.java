@@ -17,6 +17,8 @@ class CalculatorClient {
             System.out.println(num2 + " is odd");
         }
 
+        System.out.println();
+
         System.out.println(c.randomNum());
     }
 }
