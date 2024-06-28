@@ -1,33 +1,33 @@
 class Chicken {
-    String name = "Chicken";
-    String breed; // constraint: ["Silkie", "Sussex", "Leghorn", etc.]
-    String gender; // constraint: ["Male", "Female"]
-    int age; // constraint: Min of 0
-    int legs = 2; // constraint: Max of 2
-    int wings = 2; // constraint: Max of 2
-    double hungerLevel = 50.0; // constraint: Between 0 and 100
-    boolean isAlive = true;
-    boolean isHungry = false;
+    private String name = "Chicken";
+    private String breed; // constraint: ["Silkie", "Sussex", "Leghorn", etc.]
+    private String gender; // constraint: ["Male", "Female"]
+    private int age; // constraint: Min of 0
+    private int legs = 2; // constraint: Max of 2
+    private int wings = 2; // constraint: Max of 2
+    private double hungerLevel = 50.0; // constraint: Between 0 and 100
+    private boolean isAlive = true;
+    private boolean isHungry = false;
 
-    void speak() {
+    public void speak() {
         System.out.println("Cluck! Cluck! Cluck!");
     }
 
-    void eat() {
+    public void eat() {
         System.out.println(this.name + " is eating...");
         this.hungerLevel += 5;
     }
 
-    void loseWing() {
+    public void loseWing() {
         this.wings--;
     }
 
-    void loseLeg() {
+    public void loseLeg() {
         System.out.println(this.name + " has lost a leg!");
         this.legs--;
     }
 
-    void die() {
+    public void die() {
         System.out.println(this.name + " has died...");
     }
 

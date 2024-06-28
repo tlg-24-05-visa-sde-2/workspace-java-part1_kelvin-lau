@@ -1,15 +1,23 @@
 class Television {
+    // FIELDS or INSTANCE VARIABLES
     String brand;
     int volume = 1;
 
+    // BUSINESS METHODS
     public void turnOn() {
-        System.out.println(this.brand + " TV is on at volume - " + this.volume);
+        boolean isConnected = verifyInternetConnection();
+        System.out.println(this.brand + " TV turning on. TV is at volume - " + this.volume);
     }
 
     public void turnOff() {
         System.out.println(this.brand + " TV is off");
     }
 
+    private boolean verifyInternetConnection() {
+        return true;
+    }
+
+    // ACCESSOR METHODS
     public String getBrand() {
         return this.brand;
     }
