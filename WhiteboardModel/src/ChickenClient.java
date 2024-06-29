@@ -5,10 +5,14 @@ class ChickenClient {
         chicken1.setBreed("Silkie");
         chicken1.setGender("Male");
 
-        System.out.println(chicken1.getName() + " pregnant: " + chicken1.isPregnant());
+
 
         chicken1.speak();
 
+        System.out.println();
+
+        System.out.println(chicken1.getName() + " pregnant: " + chicken1.isPregnant());
+        chicken1.date();
         System.out.println(chicken1.getName() + " pregnant: " + chicken1.isPregnant());
 
         System.out.println();

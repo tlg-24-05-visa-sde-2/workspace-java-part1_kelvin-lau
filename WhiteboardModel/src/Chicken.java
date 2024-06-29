@@ -20,7 +20,9 @@ class Chicken {
     }
 
     private void mate() {
-        this.isPregnant = true;
+        if (this.gender.equals("female") || this.gender.equals("Female")) {
+            this.isPregnant = true;
+        }
     }
 
 
