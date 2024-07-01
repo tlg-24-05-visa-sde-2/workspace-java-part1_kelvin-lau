@@ -8,13 +8,17 @@ class AlarmClock {
     private int snoozeInterval = 5;
 
     // constructors
+    public AlarmClock() {
+
+    }
+
     public AlarmClock(int snoozeInterval) {
         setSnoozeInterval(snoozeInterval); // delegate to setter for validation/conversion
     }
 
     // functions or operations - these are called "methods" in Java
     public void snooze() {
-        System.out.println("Snoozing for " + snoozeInterval + " minutes.");
+        System.out.println("Snoozing for " + this.getSnoozeInterval() + " minutes.");
     }
 
     public int getSnoozeInterval() {
@@ -22,8 +26,8 @@ class AlarmClock {
     }
 
     public void setSnoozeInterval(int snoozeInterval) {
-        if (snoozeInterval < 10 || snoozeInterval >= 20) {
-            System.out.println("Snooze interval must be between 10 and 20.");
+        if (snoozeInterval < 1 || snoozeInterval > 20) {
+            System.out.println("Invalid snooze interval: " + snoozeInterval + "\nSnooze interval must be between 1 and 20 (inclusive).");
         } else {
             this.snoozeInterval = snoozeInterval;
         }
@@ -31,6 +35,6 @@ class AlarmClock {
     }
 
     public String toString() {
-        return "AlarmClock: snoozeInterval=" + snoozeInterval;
+        return "AlarmClock: snoozeInterval=" + this.getSnoozeInterval();
     }
 }
