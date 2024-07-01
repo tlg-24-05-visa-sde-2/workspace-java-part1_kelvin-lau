@@ -8,13 +8,11 @@ class AlarmClockClient {
     // starting point or "entry" point for every standalone Java application
     public static void main(String[] args) {
         // create an instance of AlarmClock
-        AlarmClock clock1 = new AlarmClock();
-        clock1.setSnoozeInterval(-7); // this should not be allowed
+        AlarmClock clock1 = new AlarmClock(-7);
 
-        AlarmClock clock2 = new AlarmClock();
-        clock2.setSnoozeInterval(11);
+        AlarmClock clock2 = new AlarmClock(11);
 
-        AlarmClock clock3 = new AlarmClock();
+        AlarmClock clock3 = new AlarmClock(1);
 
         clock1.snooze();
         clock2.snooze();
