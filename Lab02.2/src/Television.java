@@ -6,11 +6,11 @@ class Television {
     // BUSINESS METHODS
     public void turnOn() {
         boolean isConnected = verifyInternetConnection();
-        System.out.println(this.brand + " TV turning on. TV is at volume - " + this.volume);
+        System.out.println(this.getBrand() + " TV turning on. TV is at volume - " + this.getVolume());
     }
 
     public void turnOff() {
-        System.out.println(this.brand + " TV is off");
+        System.out.println(this.getBrand() + " TV is off");
     }
 
     private boolean verifyInternetConnection() {
@@ -35,6 +35,6 @@ class Television {
     }
 
     public String toString() {
-        return "Television Brand: " + this.brand + " - Volume: " + this.volume;
+        return "Television Brand: " + this.getBrand() + " - Volume: " + this.getVolume();
     }
 }
