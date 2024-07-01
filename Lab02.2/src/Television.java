@@ -3,6 +3,19 @@ class Television {
     private String brand;
     private int volume = 1;
 
+    public Television() {
+
+    }
+
+    public Television(String brand) {
+        this.setBrand(brand);
+    }
+
+    public Television(String brand, int volume) {
+        this(brand);
+        this.setVolume(volume);
+    }
+
     // BUSINESS METHODS
     public void turnOn() {
         boolean isConnected = verifyInternetConnection();
