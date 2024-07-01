@@ -1,7 +1,7 @@
 class Television {
     // FIELDS or INSTANCE VARIABLES
-    String brand;
-    int volume = 1;
+    private String brand;
+    private int volume = 1;
 
     // BUSINESS METHODS
     public void turnOn() {
@@ -35,6 +35,6 @@ class Television {
     }
 
     public String toString() {
-        return "Brand: " + this.brand + " - Volume: " + this.volume;
+        return "Television Brand: " + this.brand + " - Volume: " + this.volume;
     }
 }

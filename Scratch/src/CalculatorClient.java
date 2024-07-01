@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 class CalculatorClient {
     public static void main(String[] args) {
         Calculator c = new Calculator();
@@ -19,6 +22,17 @@ class CalculatorClient {
 
         System.out.println();
 
-        System.out.println(c.randomNum());
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        for (int i = 0; i < 50; i++) {
+            int randNum = c.randomNum(0, 10);
+            if (map.containsKey(randNum)) {
+                map.put(randNum, map.get(randNum) + 1);
+            } else {
+                map.put(randNum, 1);
+            }
+        }
+
+        System.out.println(map);
     }
 }

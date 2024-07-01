@@ -30,7 +30,7 @@ class Calculator {
 
     int randomNum() {
         double result = (Math.random() * 10) + 1;
-
+        // randomNum(1, 11) - delegate to "min-max" version of randomNum()
 
 
         return (int) Math.round(result); // explicit downcast from double to int
