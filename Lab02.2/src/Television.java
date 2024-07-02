@@ -10,6 +10,8 @@ class Television {
     // FIELDS or INSTANCE VARIABLES
     private String brand;
     private int volume = 1;
+    private int oldVolume;
+    private boolean isMuted = false;
 
     public Television() {
         instanceCount++;
@@ -35,6 +37,23 @@ class Television {
         System.out.println(this.getBrand() + " TV is off");
     }
 
+    public void mute() {
+        if (this.isMuted()) {
+            this.setVolume(this.oldVolume);
+            System.out.println("TV un-muted, volume is now " + this.getVolume());
+            this.isMuted = false;
+        } else {
+            this.oldVolume = this.getVolume();
+            this.setVolume(0);
+            System.out.println("TV muted, volume is now " + this.getVolume());
+            this.isMuted = true;
+        }
+    }
+
+    public boolean isMuted() {
+        return this.isMuted;
+    }
+
     private boolean verifyInternetConnection() {
         return true;
     }
@@ -45,7 +64,17 @@ class Television {
     }
 
     public void setBrand(String brand) {
-        this.brand = brand;
+        switch (brand) {
+            case "Samsung":
+            case "LG":
+            case "Sony":
+            case "Toshiba":
+                this.brand = brand;
+                break;
+            default:
+                System.out.println("Invalid brand: " + brand);
+                break;
+        }
     }
 
     public int getVolume() {
@@ -53,7 +82,11 @@ class Television {
     }
 
     public void setVolume(int volume) {
-        this.volume = volume;
+        if (volume < MIN_VOLUME || volume > MAX_VOLUME) {
+            System.out.println("Invalid volume: " + volume + " - Volume must be between " + MIN_VOLUME + " and " + MAX_VOLUME);
+        } else {
+            this.volume = volume;
+        }
     }
 
     public String toString() {

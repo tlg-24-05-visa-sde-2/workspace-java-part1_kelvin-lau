@@ -30,6 +30,15 @@ class TelevisionClient {
 
         System.out.println();
 
+        tv3.setVolume(Television.MAX_VOLUME);
+
+        tv3.mute();
+        tv3.mute();
+        tv3.mute();
+        tv3.mute();
+
+        System.out.println();
+
         System.out.println(Television.getInstanceCount());
     }
 }
