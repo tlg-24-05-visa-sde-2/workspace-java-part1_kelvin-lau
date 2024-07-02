@@ -10,6 +10,21 @@ class Chicken {
     private boolean isHungry = false;
     private boolean isPregnant = false;
 
+    public Chicken() {
+
+    }
+
+    public Chicken(String name, String breed) {
+        this.setName(name);
+        this.setBreed(breed);
+    }
+
+    public Chicken(String name, String breed, String gender) {
+        this(name, breed);
+        this.setBreed(breed);
+        this.setGender(gender);
+    }
+
     public void speak() {
         System.out.println("Cluck! Cluck! Cluck!");
     }
@@ -26,19 +41,26 @@ class Chicken {
     }
 
 
-
     public void eat() {
         System.out.println(this.name + " is eating...");
         this.hungerLevel += 5;
     }
 
     public void loseWing() {
-        this.wings--;
+        if (this.getWings() > 0) {
+            this.setWings((this.getWings() - 1));
+        } else {
+            System.out.println(this.getName() + " has no more wings to lose!");
+        }
+
     }
 
     public void loseLeg() {
-        System.out.println(this.name + " has lost a leg!");
-        this.legs--;
+        if (this.getLegs() > 0) {
+            this.setLegs((this.getLegs() - 1));
+        } else {
+            System.out.println(this.getName() + " has no more legs to lose!");
+        }
     }
 
     public void die() {
@@ -48,7 +70,7 @@ class Chicken {
     // accessor methods
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -56,7 +78,7 @@ class Chicken {
     }
 
     public String getBreed() {
-        return breed;
+        return this.breed;
     }
 
     public void setBreed(String breed) {
@@ -64,7 +86,7 @@ class Chicken {
     }
 
     public String getGender() {
-        return gender;
+        return this.gender;
     }
 
     public void setGender(String gender) {
@@ -72,7 +94,7 @@ class Chicken {
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
     public void setAge(int age) {
@@ -80,7 +102,7 @@ class Chicken {
     }
 
     public int getLegs() {
-        return legs;
+        return this.legs;
     }
 
     public void setLegs(int legs) {
@@ -88,7 +110,7 @@ class Chicken {
     }
 
     public int getWings() {
-        return wings;
+        return this.wings;
     }
 
     public void setWings(int wings) {
@@ -96,7 +118,7 @@ class Chicken {
     }
 
     public double getHungerLevel() {
-        return hungerLevel;
+        return this.hungerLevel;
     }
 
     public void setHungerLevel(double hungerLevel) {
@@ -104,31 +126,31 @@ class Chicken {
     }
 
     public boolean isAlive() {
-        return isAlive;
+        return this.isAlive;
     }
 
     public void setAlive(boolean alive) {
-        isAlive = alive;
+        this.isAlive = alive;
     }
 
     public boolean isHungry() {
-        return isHungry;
+        return this.isHungry;
     }
 
     public void setHungry(boolean hungry) {
-        isHungry = hungry;
+        this.isHungry = hungry;
     }
 
     public boolean isPregnant() {
-        return isPregnant;
+        return this.isPregnant;
     }
 
     public void setPregnant(boolean pregnant) {
-        isPregnant = pregnant;
+        this.isPregnant = pregnant;
     }
 
     // toString()
     public String toString() {
-        return "Chicken [name=" + name + ", breed=" + breed + ", gender=" + gender + "]";
+        return "Chicken [name=" + this.getName() + ", breed=" + this.getBreed() + ", gender=" + this.getGender() + "]";
     }
 }
