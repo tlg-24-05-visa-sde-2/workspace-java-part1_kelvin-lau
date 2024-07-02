@@ -7,7 +7,6 @@ class Chicken {
     private int wings = 2; // constraint: Max of 2
     private double hungerLevel = 50.0; // constraint: Between 0 and 100
     private boolean isAlive = true;
-    private boolean isHungry = false;
     private boolean isPregnant = false;
 
     public Chicken() {
@@ -131,14 +130,6 @@ class Chicken {
 
     public void setAlive(boolean alive) {
         this.isAlive = alive;
-    }
-
-    public boolean isHungry() {
-        return this.isHungry;
-    }
-
-    public void setHungry(boolean hungry) {
-        this.isHungry = hungry;
     }
 
     public boolean isPregnant() {
