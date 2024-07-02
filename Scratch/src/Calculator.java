@@ -2,15 +2,15 @@ import java.lang.Math;
 
 class Calculator {
 
-    int add(int a, int b) {
+    public static int add(int a, int b) {
         return a + b;
     }
 
-    int subtract(int a, int b) {
+    public static int subtract(int a, int b) {
         return a - b;
     }
 
-    boolean isEven(int a) {
+    public static boolean isEven(int a) {
         return a % 2 == 0;
     }
 
@@ -18,7 +18,7 @@ class Calculator {
      * Returns a random integer between 'min' and 'max' inclusive
      */
 
-    int randomNum(int min, int max) {
+    public static int randomNum(int min, int max) {
         return (int) (Math.random() * (max - min + 1)) + min;
     }
 
@@ -28,7 +28,7 @@ class Calculator {
      * NOTE: these methods are all static
      */
 
-    int randomNum() {
+    public static int randomNum() {
         double result = (Math.random() * 10) + 1;
         // randomNum(1, 11) - delegate to "min-max" version of randomNum()
 
