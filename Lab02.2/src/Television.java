@@ -1,13 +1,22 @@
 class Television {
+    public static final int MIN_VOLUME = 0;
+    public static final int MAX_VOLUME = 100;
+    public static int instanceCount = 0;
+
+    public static int getInstanceCount() {
+        return instanceCount;
+    }
+
     // FIELDS or INSTANCE VARIABLES
     private String brand;
     private int volume = 1;
 
     public Television() {
-
+        instanceCount++;
     }
 
     public Television(String brand) {
+        this();
         this.setBrand(brand);
     }
 
