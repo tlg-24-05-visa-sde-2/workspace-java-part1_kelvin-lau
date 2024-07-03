@@ -64,7 +64,14 @@ class Movie {
     }
 
     public String toString() {
-        return "Movie Title: " + this.getTitle() + ", Movie Release Year: " + this.getReleaseYear() +
-                ", Rating: " + this.getRating() + ", Genre: " + this.getGenre() + ", Movie Revenue: $" + this.getRevenue();
+        if (this.getRevenue() == null) {
+            return String.format("Movie Title: %s - Release Year: %s - Rating: %s - Genre: %s - Revenue: %f",
+                    this.getTitle(), this.getReleaseYear(), this.getRating(), this.getGenre(), this.getRevenue());
+        }
+
+        return String.format("Movie Title: %s - Release Year: %s - Rating: %s - Genre: %s - Revenue: $%,.2f",
+                this.getTitle(), this.getReleaseYear(), this.getRating(), this.getGenre(), this.getRevenue());
+        // return "Movie Title: " + this.getTitle() + ", Movie Release Year: " + this.getReleaseYear() +
+        //        ", Rating: " + this.getRating() + ", Genre: " + this.getGenre() + ", Movie Revenue: $" + this.getRevenue();
     }
 }

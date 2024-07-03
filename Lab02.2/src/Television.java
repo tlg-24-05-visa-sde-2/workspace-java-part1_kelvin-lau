@@ -90,7 +90,8 @@ class Television {
 
     public void setVolume(int volume) {
         if (volume < MIN_VOLUME || volume > MAX_VOLUME) {
-            System.out.println("Invalid volume: " + volume + " - Volume must be between " + MIN_VOLUME + " and " + MAX_VOLUME);
+            System.out.printf("Invalid volume: %s. Volume must be between %s and %s.\n", volume, MIN_VOLUME, MAX_VOLUME);
+            // System.out.println("Invalid volume: " + volume + " - Volume must be between " + MIN_VOLUME + " and " + MAX_VOLUME);
         } else {
             this.volume = volume;
         }
@@ -106,6 +107,7 @@ class Television {
 
     public String toString() {
         String volumeString = isMuted ? "<muted>" : String.valueOf(getVolume());
-        return "Television Brand: " + this.getBrand() + " - Display Type: " + this.getDisplayType() + " - Volume: " + volumeString;
+        return String.format("Television Brand: %s. Display Type: %s. Volume: %s.", this.getBrand(), this.getDisplayType(), volumeString);
+        // return "Television Brand: " + this.getBrand() + " - Display Type: " + this.getDisplayType() + " - Volume: " + volumeString;
     }
 }

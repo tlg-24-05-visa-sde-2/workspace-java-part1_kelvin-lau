@@ -6,7 +6,7 @@ class TelevisionClient {
 
         Television tv2 = new Television("LG", Television.MIN_VOLUME);
 
-        Television tv3 = new Television("Sony", 40, DisplayType.CRT);
+        Television tv3 = new Television("Sony", 110, DisplayType.CRT);
 
         tv1.turnOn();
         tv1.setVolume(Television.MAX_VOLUME);
