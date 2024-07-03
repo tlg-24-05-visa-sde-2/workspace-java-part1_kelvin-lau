@@ -13,7 +13,7 @@ class ConcertTimeTest {
 
     public static void main(String[] args) {
         // listAvailableZoneIds();
-        // testLiveConcert();
+         testLiveConcert();
     }
 
     /*
@@ -38,5 +38,8 @@ class ConcertTimeTest {
      */
     public static void testLiveConcert() {
         // TODO
+        // Australia/Perth
+        // America/Toronto
+
     }
 }

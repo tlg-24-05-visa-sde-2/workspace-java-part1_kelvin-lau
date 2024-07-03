@@ -23,7 +23,7 @@ class DateTimeTest {
      */
     public static void main(String[] args) {
         // testNow();
-        // testCreate();
+        testCreate();
         // testParse();
         // testFormat();
     }
@@ -33,6 +33,13 @@ class DateTimeTest {
      */
     public static void testNow() {
         // TODO
+        LocalDate date  = LocalDate.now();
+        LocalTime time = LocalTime.now();
+        LocalDateTime timestamp = LocalDateTime.now().withNano(0);
+        System.out.println("Date: " + date);
+        System.out.println("Time: " + time);
+        System.out.println("Timestamp: " + timestamp);
+
     }
 
     /**
@@ -40,9 +47,14 @@ class DateTimeTest {
      */
     public static void testCreate() {
         // TODO: create your birthday via of(). What day of the week were you born on?
-
+        LocalDate bday = LocalDate.of(1995, 4, 12);
+        DayOfWeek dayOfWeek = bday.getDayOfWeek();
         // TODO: use of() to create a value representing the 1st lunar landing - it happened on 7/20/69 at 3:18pm Eastern Time.
         // NOTE: ignore time-zone, just assume Eastern Time is the local time.
+        LocalDateTime lunarLanding = LocalDateTime.of(1969, 7, 20, 15, 18);
+
+        System.out.println("Kelvin's Birthday: " + dayOfWeek);
+        System.out.println("Lunar Landing: " + lunarLanding);
     }
 
     /**
@@ -50,7 +62,8 @@ class DateTimeTest {
      */
     public static void testParse() {
         // TODO: create your birthday by parsing a text representation in standard format ("yyyy-MM-dd").
-
+        LocalDate bday = LocalDate.parse("1995-04-12");
+        System.out.println(bday);
         // OPTIONAL: now create it by parsing text in the form "2/6/2014" (this is Feb 6, not Jun 2).
     }
 
