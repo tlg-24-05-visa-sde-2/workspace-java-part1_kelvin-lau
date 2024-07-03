@@ -10,6 +10,8 @@ class Television {
     // FIELDS or INSTANCE VARIABLES
     private String brand;
     private int volume = 1;
+    private DisplayType displayType = DisplayType.LED;
+
     private int oldVolume;
     private boolean isMuted = false;
 
@@ -25,6 +27,11 @@ class Television {
     public Television(String brand, int volume) {
         this(brand);
         this.setVolume(volume);
+    }
+
+    public Television(String brand, int volume, DisplayType displayType) {
+        this(brand, volume);
+        this.setDisplayType(displayType);
     }
 
     // BUSINESS METHODS
@@ -89,7 +96,16 @@ class Television {
         }
     }
 
+    public DisplayType getDisplayType() {
+        return displayType;
+    }
+
+    public void setDisplayType(DisplayType displayType) {
+        this.displayType = displayType;
+    }
+
     public String toString() {
-        return "Television Brand: " + this.getBrand() + " - Volume: " + this.getVolume();
+        String volumeString = isMuted ? "<muted>" : String.valueOf(getVolume());
+        return "Television Brand: " + this.getBrand() + " - Display Type: " + this.getDisplayType() + " - Volume: " + volumeString;
     }
 }
