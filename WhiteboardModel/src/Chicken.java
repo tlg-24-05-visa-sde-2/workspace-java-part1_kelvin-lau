@@ -57,6 +57,7 @@ class Chicken {
     public void loseLeg() {
         if (this.getLegs() > 0) {
             this.setLegs((this.getLegs() - 1));
+            System.out.println(this.name + " has lost a leg!");
         } else {
             System.out.println(this.getName() + " has no more legs to lose!");
         }
