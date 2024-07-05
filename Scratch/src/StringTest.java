@@ -18,5 +18,14 @@ class StringTest {
         System.out.println(plate1.matches(pattern));
         String plate2 = "AAS1124";
         System.out.println(plate2.matches(pattern));
+        System.out.println();
+
+        String poem = """
+                Roses are red
+                Violets are blue
+                Sugar is "sweet"
+                And so are YOU!
+                """;
+        System.out.println(poem);
     }
 }
