@@ -16,15 +16,19 @@ class Person {
         this.birthDate = birthDate;
     }
 
-    public String getName() {
+    public int age() {
+        return LocalDate.now().compareTo(birthDate);
+    }
+
+    public String name() {
         return name;
     }
 
-    public LocalDate getBirthDate() {
+    public LocalDate birthDate() {
         return birthDate;
     }
 
     public String toString() {
-        return String.format("Name: %s, Birth Date: %s", name, birthDate);
+        return String.format("Name: %s, Birth Date: %s\n", name, birthDate);
     }
 }
