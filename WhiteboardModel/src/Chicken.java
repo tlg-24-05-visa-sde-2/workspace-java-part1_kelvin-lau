@@ -1,7 +1,10 @@
+import java.time.LocalDate;
+
 class Chicken {
     private String name = "Chicken";
-    private String breed; // constraint: ["Silkie", "Sussex", "Leghorn", etc.]
+    private Breed breed;
     private String gender; // constraint: ["Male", "Female"]
+    private LocalDate birthDate;
     private int age; // constraint: Min of 0
     private int legs = 2; // constraint: Max of 2
     private int wings = 2; // constraint: Max of 2
@@ -9,16 +12,19 @@ class Chicken {
     private boolean isAlive = true;
     private boolean isPregnant = false;
 
-    public Chicken() {
+    // 7/3/2024 - enum and LocalDate
 
+    public Chicken(LocalDate birthday) {
+        this.setBirthDate(birthday);
     }
 
-    public Chicken(String name, String breed) {
+    public Chicken(String name, Breed breed) {
         this.setName(name);
         this.setBreed(breed);
+
     }
 
-    public Chicken(String name, String breed, String gender) {
+    public Chicken(String name, Breed breed, String gender) {
         this(name, breed);
         this.setBreed(breed);
         this.setGender(gender);
@@ -77,11 +83,11 @@ class Chicken {
         this.name = name;
     }
 
-    public String getBreed() {
+    public Breed getBreed() {
         return this.breed;
     }
 
-    public void setBreed(String breed) {
+    public void setBreed(Breed breed) {
         this.breed = breed;
     }
 
@@ -141,8 +147,16 @@ class Chicken {
         this.isPregnant = pregnant;
     }
 
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
     // toString()
     public String toString() {
-        return "Chicken [name=" + this.getName() + ", breed=" + this.getBreed() + ", gender=" + this.getGender() + "]";
+        return "Chicken [name=" + this.getName() + ", breed=" + this.getBreed() + ", gender=" + this.getGender() + ", born=" + this.getBirthDate() + "]";
     }
 }

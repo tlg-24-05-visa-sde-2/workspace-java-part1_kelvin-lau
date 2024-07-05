@@ -1,8 +1,10 @@
+import java.time.LocalDate;
+
 class ChickenClient {
     public static void main(String[] args) {
-        Chicken chicken1 = new Chicken();
+        Chicken chicken1 = new Chicken(LocalDate.now());
         chicken1.setName("Lester");
-        chicken1.setBreed("Silkie");
+        chicken1.setBreed(Breed.SILKIE);
         chicken1.setGender("Male");
 
 

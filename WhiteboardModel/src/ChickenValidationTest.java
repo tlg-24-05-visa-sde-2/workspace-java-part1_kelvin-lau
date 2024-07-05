@@ -1,6 +1,6 @@
 class ChickenValidationTest {
     public static void main(String[] args) {
-        Chicken chicken = new Chicken("Bonnie", "Silkie");
+        Chicken chicken = new Chicken("Bonnie", Breed.ORPINGTON);
         chicken.setGender("female");
         chicken.loseLeg();
         chicken.loseLeg();
@@ -11,5 +11,6 @@ class ChickenValidationTest {
         System.out.println(chicken.isPregnant());
         chicken.date();
         System.out.println(chicken.isPregnant());
+        System.out.println(chicken);
     }
 }
