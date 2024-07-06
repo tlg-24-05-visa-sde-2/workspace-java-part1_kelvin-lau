@@ -1,6 +1,6 @@
 class ChickenValidationTest {
     public static void main(String[] args) {
-        Chicken chicken = new Chicken("Bonnie", Breed.ORPINGTON);
+        Chicken chicken = new Chicken("Bonnie", Breed.ORPINGTON, "Male");
         chicken.setGender("female");
         chicken.loseLeg();
         chicken.loseLeg();

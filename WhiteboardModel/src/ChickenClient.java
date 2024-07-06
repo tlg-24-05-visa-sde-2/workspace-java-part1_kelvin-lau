@@ -7,8 +7,6 @@ class ChickenClient {
         chicken1.setBreed(Breed.SILKIE);
         chicken1.setGender("Male");
 
-
-
         chicken1.speak();
 
         System.out.println();
@@ -20,16 +18,11 @@ class ChickenClient {
         System.out.println();
 
         System.out.println(chicken1.getName() + " has " + chicken1.getLegs() + " legs.");
-        System.out.println(chicken1.getName() + " has " + chicken1.getWings() + " wings.");
         chicken1.loseLeg();
         System.out.println(chicken1.getName() + " has " + chicken1.getLegs() + " legs.");
-        System.out.println(chicken1.getName() + " has " + chicken1.getWings() + " wings.");
 
         System.out.println();
 
-        System.out.println(chicken1.getName() + "'s hunger level is: " + chicken1.getHungerLevel());
-        chicken1.eat();
-        System.out.println(chicken1.getName() + "'s hunger level is: " + chicken1.getHungerLevel());
         chicken1.die();
 
         System.out.println();

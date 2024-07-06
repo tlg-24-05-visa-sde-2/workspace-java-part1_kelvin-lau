@@ -4,30 +4,26 @@ class Chicken {
     private String name = "Chicken";
     private Breed breed;
     private String gender; // constraint: ["Male", "Female"]
-    private LocalDate birthDate;
-    private int age; // constraint: Min of 0
+    private LocalDate birthDay;
     private int legs = 2; // constraint: Max of 2
-    private int wings = 2; // constraint: Max of 2
-    private double hungerLevel = 50.0; // constraint: Between 0 and 100
     private boolean isAlive = true;
     private boolean isPregnant = false;
 
     // 7/3/2024 - enum and LocalDate
 
     public Chicken(LocalDate birthday) {
-        this.setBirthDate(birthday);
-    }
-
-    public Chicken(String name, Breed breed) {
-        this.setName(name);
-        this.setBreed(breed);
-
+        this.setBirthDay(birthday);
     }
 
     public Chicken(String name, Breed breed, String gender) {
-        this(name, breed);
+        this.setName(name);
         this.setBreed(breed);
         this.setGender(gender);
+    }
+
+    public Chicken(String name, Breed breed, String gender, LocalDate birthDay) {
+        this(name, breed, gender);
+        this.setBirthDay(birthDay);
     }
 
     public void speak() {
@@ -43,21 +39,6 @@ class Chicken {
         if (this.gender.equals("female") || this.gender.equals("Female")) {
             this.isPregnant = true;
         }
-    }
-
-
-    public void eat() {
-        System.out.println(this.name + " is eating...");
-        this.hungerLevel += 5;
-    }
-
-    public void loseWing() {
-        if (this.getWings() > 0) {
-            this.setWings((this.getWings() - 1));
-        } else {
-            System.out.println(this.getName() + " has no more wings to lose!");
-        }
-
     }
 
     public void loseLeg() {
@@ -99,36 +80,12 @@ class Chicken {
         this.gender = gender;
     }
 
-    public int getAge() {
-        return this.age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public int getLegs() {
         return this.legs;
     }
 
     public void setLegs(int legs) {
         this.legs = legs;
-    }
-
-    public int getWings() {
-        return this.wings;
-    }
-
-    public void setWings(int wings) {
-        this.wings = wings;
-    }
-
-    public double getHungerLevel() {
-        return this.hungerLevel;
-    }
-
-    public void setHungerLevel(double hungerLevel) {
-        this.hungerLevel = hungerLevel;
     }
 
     public boolean isAlive() {
@@ -147,16 +104,16 @@ class Chicken {
         this.isPregnant = pregnant;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public LocalDate getBirthDay() {
+        return birthDay;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthDay(LocalDate birthDate) {
+        this.birthDay = birthDate;
     }
 
     // toString()
     public String toString() {
-        return "Chicken [name=" + this.getName() + ", breed=" + this.getBreed() + ", gender=" + this.getGender() + ", born=" + this.getBirthDate() + "]";
+        return "Chicken [name=" + this.getName() + ", breed=" + this.getBreed() + ", gender=" + this.getGender() + ", born=" + this.getBirthDay() + "]";
     }
 }
