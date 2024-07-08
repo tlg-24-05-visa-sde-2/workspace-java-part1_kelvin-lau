@@ -7,9 +7,11 @@ class TelevisionValidationTest {
 
         tv1.setVolume(100);
         System.out.println(tv1);
+        System.out.println();
 
         tv1.setVolume(-1);
         System.out.println(tv1);
+        System.out.println();
 
         tv1.setVolume(101);
         System.out.println(tv1);
@@ -26,7 +28,11 @@ class TelevisionValidationTest {
         System.out.println(tv2);
         tv2.setBrand("Toshiba");
         System.out.println(tv2);
+        System.out.println();
+
         tv2.setBrand("INVALID");
+        System.out.println();
+
         System.out.println(tv2);
     }
 }

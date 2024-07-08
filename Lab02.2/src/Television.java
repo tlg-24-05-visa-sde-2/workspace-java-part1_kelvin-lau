@@ -1,7 +1,13 @@
+import java.util.Arrays;
+
 class Television {
     public static final int MIN_VOLUME = 0;
     public static final int MAX_VOLUME = 100;
+
+    public static final String[] VALID_BRANDS = {"Samsung", "LG", "Sony", "Toshiba"};
+
     public static int instanceCount = 0;
+
 
     public static int getInstanceCount() {
         return instanceCount;
@@ -71,16 +77,18 @@ class Television {
     }
 
     public void setBrand(String brand) {
-        switch (brand) {
-            case "Samsung":
-            case "LG":
-            case "Sony":
-            case "Toshiba":
-                this.brand = brand;
+        boolean found = false;
+
+        for (String valid_brand : Television.VALID_BRANDS) {
+            if (brand.equals(valid_brand)) {
+                this.brand = valid_brand;
+                found = true;
                 break;
-            default:
-                System.out.println("Invalid brand: " + brand);
-                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Invalid brand: " + brand + " - Valid brands are: " + Arrays.toString(Television.VALID_BRANDS));
         }
     }
 
