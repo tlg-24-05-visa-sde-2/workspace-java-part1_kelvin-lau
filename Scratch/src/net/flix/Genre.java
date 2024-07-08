@@ -1,6 +1,6 @@
 package net.flix;
 
-enum Genre {
+public enum Genre {
     ANIME("Anime"),
     DRAMA("Drama"),
     HORROR("Horror"),

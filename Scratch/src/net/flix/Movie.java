@@ -1,6 +1,6 @@
 package net.flix;
 
-class Movie {
+public class Movie {
     private String title;
     private Integer releaseYear;
     private Double revenue;
