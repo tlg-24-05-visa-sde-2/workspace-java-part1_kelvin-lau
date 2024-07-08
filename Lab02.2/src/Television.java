@@ -13,6 +13,16 @@ class Television {
         return instanceCount;
     }
 
+    public static boolean isValidBrand(String brand) {
+        for (String valid_brand : Television.VALID_BRANDS) {
+            if (brand.equals(valid_brand)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     // FIELDS or INSTANCE VARIABLES
     private String brand;
     private int volume = 1;
@@ -77,17 +87,9 @@ class Television {
     }
 
     public void setBrand(String brand) {
-        boolean found = false;
-
-        for (String valid_brand : Television.VALID_BRANDS) {
-            if (brand.equals(valid_brand)) {
-                this.brand = valid_brand;
-                found = true;
-                break;
-            }
-        }
-
-        if (!found) {
+        if (Television.isValidBrand(brand)) {
+            this.brand = brand;
+        } else {
             System.out.println("Invalid brand: " + brand + " - Valid brands are: " + Arrays.toString(Television.VALID_BRANDS));
         }
     }
