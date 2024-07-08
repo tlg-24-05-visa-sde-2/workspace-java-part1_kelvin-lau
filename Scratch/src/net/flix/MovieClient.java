@@ -1,3 +1,5 @@
+package net.flix;
+
 class MovieClient {
     public static void main(String[] args) {
         Movie movie1 = new Movie("Interstellar", 2014, 681_000_000.82, Rating.PG_13, Genre.SCI_FI);

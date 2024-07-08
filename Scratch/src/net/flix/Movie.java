@@ -1,3 +1,5 @@
+package net.flix;
+
 class Movie {
     private String title;
     private Integer releaseYear;

@@ -1,4 +1,4 @@
-/*
+package io.snooze;/*
  * Application class to model the workings of an AlarmClock.
  * This class will NOT have a main() method, most such classes do not.
  */

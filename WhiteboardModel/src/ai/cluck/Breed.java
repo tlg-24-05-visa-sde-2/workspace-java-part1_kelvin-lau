@@ -1,3 +1,5 @@
-enum Breed {
+package ai.cluck;
+
+public enum Breed {
     SILKIE, BRAHMA, AMERAUCANA, SUSSEX, LEGHORN, POLISH, ORPINGTON, MARANS, SERAMA, AUSTRALORP
 }

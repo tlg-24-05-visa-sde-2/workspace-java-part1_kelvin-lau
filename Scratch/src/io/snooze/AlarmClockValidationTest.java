@@ -1,3 +1,5 @@
+package io.snooze;
+
 class AlarmClockValidationTest {
 
     public static void main(String[] args) {

@@ -1,3 +1,8 @@
+package ai.cluck.test;
+
+import ai.cluck.Breed;
+import ai.cluck.Chicken;
+
 class ChickenValidationTest {
     public static void main(String[] args) {
         Chicken chicken = new Chicken("Bonnie", Breed.ORPINGTON, "Male");

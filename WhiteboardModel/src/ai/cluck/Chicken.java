@@ -1,6 +1,8 @@
+package ai.cluck;
+
 import java.time.LocalDate;
 
-class Chicken {
+public class Chicken {
     private String name = "Chicken";
     private Breed breed;
     private String gender; // constraint: ["Male", "Female"]

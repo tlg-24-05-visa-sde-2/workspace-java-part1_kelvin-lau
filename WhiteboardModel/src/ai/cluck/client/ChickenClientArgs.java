@@ -1,3 +1,8 @@
+package ai.cluck.client;
+
+import ai.cluck.Breed;
+import ai.cluck.Chicken;
+
 import java.time.LocalDate;
 import java.util.Arrays;
 
