@@ -15,6 +15,18 @@ class Calculator {
     }
 
     /*
+     * Returns the average of the supplied integers.
+     */
+    public static double average(int first, int... rest) { // first: 12, rest: 3, 8
+        double sum = first;
+        for (int value : rest) {
+            sum += value;
+        }
+
+        return sum / (rest.length + 1);
+    }
+
+    /*
      * Returns a random integer between 'min' and 'max' inclusive
      */
 

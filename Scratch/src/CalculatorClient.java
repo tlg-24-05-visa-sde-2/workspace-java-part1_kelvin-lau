@@ -18,5 +18,7 @@ class CalculatorClient {
         } else {
             System.out.println(num2 + " is odd");
         }
+
+        System.out.println(Calculator.average(12, 3, 8));
     }
 }
