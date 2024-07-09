@@ -3,6 +3,10 @@ package ai.cluck;
 import java.time.LocalDate;
 
 public class Chicken {
+    public static void speak() {
+        System.out.println("Cluck! Cluck! Cluck!");
+    }
+
     private String name = "Chicken";
     private Breed breed;
     private String gender; // constraint: ["Male", "Female"]
@@ -26,10 +30,6 @@ public class Chicken {
     public Chicken(String name, Breed breed, String gender, LocalDate birthDay) {
         this(name, breed, gender);
         this.setBirthDay(birthDay);
-    }
-
-    public void speak() {
-        System.out.println("Cluck! Cluck! Cluck!");
     }
 
     public void date() {
