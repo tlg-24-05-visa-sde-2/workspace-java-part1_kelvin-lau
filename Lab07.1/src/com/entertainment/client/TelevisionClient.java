@@ -2,6 +2,7 @@ package com.entertainment.client;
 
 import com.entertainment.DisplayType;
 import com.entertainment.Television;
+import com.entertainment.VolumeLevel;
 
 class TelevisionClient {
 
@@ -20,6 +21,7 @@ class TelevisionClient {
         System.out.println();
 
         tv2.turnOn();
+        tv2.setVolume(VolumeLevel.LOUD);
         tv2.turnOff();
 
         System.out.println();

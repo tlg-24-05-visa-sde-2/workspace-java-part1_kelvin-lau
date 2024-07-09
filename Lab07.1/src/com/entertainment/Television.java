@@ -100,6 +100,10 @@ public class Television {
         return this.volume;
     }
 
+    public void setVolume(VolumeLevel volumeLevel) {
+        this.volume = volumeLevel.getLevel();
+    }
+
     public void setVolume(int volume) {
         if (volume < MIN_VOLUME || volume > MAX_VOLUME) {
             System.out.printf("Invalid volume: %s. Volume must be between %s and %s.\n", volume, MIN_VOLUME, MAX_VOLUME);
