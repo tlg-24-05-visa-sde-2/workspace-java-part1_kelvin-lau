@@ -53,6 +53,21 @@ public class Department {
         }
     }
 
+    public void payEmployees() {
+        for (int i = 0; i < currentIndex; i++) {
+            employees[i].pay();
+        }
+    }
+
+    public void holidayBreak() {
+        for (int i = 0; i < currentIndex; i++) {
+            if (employees[i] instanceof SalariedEmployee) {
+                SalariedEmployee semp = (SalariedEmployee) employees[i];
+                semp.takeVacation();
+            }
+        }
+    }
+
     // helper method to add an Employee to the array
     public void addEmployee(Employee emp) {
         employees[currentIndex++] = emp;
@@ -77,6 +92,6 @@ public class Department {
 
     @Override
     public String toString() {
-        return "Department: name=" + getName() + ", location=" + getLocation();
+        return getClass().getSimpleName() + ": name=" + getName() + ", location=" + getLocation();
     }
 }

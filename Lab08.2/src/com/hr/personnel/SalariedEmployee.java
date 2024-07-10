@@ -15,6 +15,16 @@ public class SalariedEmployee extends Employee {
         setSalary(salary);
     }
 
+    // action or business methods
+    @Override
+    public void pay() {
+        System.out.println(getName() + " is paid $" + getSalary());
+    }
+
+    public void takeVacation() {
+        System.out.println(getName() + " is taking vacation");
+    }
+
     public double getSalary() {
         return salary;
     }
@@ -24,6 +34,6 @@ public class SalariedEmployee extends Employee {
     }
 
     public String toString() {
-        return "Name: " + getName() + " Hire Date: " + getHireDate() + ", Salary: " + getSalary();
+        return super.toString() + getHireDate() + ", Salary: " + getSalary();
     }
 }

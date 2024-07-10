@@ -36,5 +36,11 @@ class HRClient {
         // make its Employees work
         System.out.println("\nMake employees work:");
         dept.workEmployees();
+
+        System.out.println("\nPay all employees:");
+        dept.payEmployees();
+
+        System.out.println("\nSalaried employees on holiday:");
+        dept.holidayBreak();
     }
 }
