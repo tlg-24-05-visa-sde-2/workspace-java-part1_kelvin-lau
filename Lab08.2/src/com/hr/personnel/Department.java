@@ -62,8 +62,7 @@ public class Department {
     public void holidayBreak() {
         for (int i = 0; i < currentIndex; i++) {
             if (employees[i] instanceof SalariedEmployee) {
-                SalariedEmployee semp = (SalariedEmployee) employees[i];
-                semp.takeVacation();
+                ((SalariedEmployee) employees[i]).takeVacation();
             }
         }
     }
