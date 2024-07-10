@@ -75,6 +75,7 @@ public class Department {
         this.location = location;
     }
 
+    @Override
     public String toString() {
         return "Department: name=" + getName() + ", location=" + getLocation();
     }
