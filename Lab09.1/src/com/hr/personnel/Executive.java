@@ -16,6 +16,16 @@ public class Executive extends SalariedEmployee {
         super(name, hireDate, salary);
     }
 
+    @Override // interface TaxPayer (default method)
+    public void fileReturn() {
+        System.out.println("Return filed electronically");
+    }
+
+    @Override
+    public double getStandardDeduction() {
+        return getSalary() / 2;
+    }
+
     // business methods
     @Override
     public void work() {

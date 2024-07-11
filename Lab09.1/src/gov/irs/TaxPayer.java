@@ -19,6 +19,15 @@ package gov.irs;
 public interface TaxPayer {
     public static final double HOURLY_TAX_RATE = 0.25;
     public static final double SALARIED_TAX_RATE = 0.30;
+    public static final double STANDARD_DEDUCTION = 7500;
     
     public void payTaxes();
+
+    default public void fileReturn() {
+        System.out.println("Return filed by IRS");
+    }
+
+    default public double getStandardDeduction() {
+        return STANDARD_DEDUCTION;
+    }
 }
