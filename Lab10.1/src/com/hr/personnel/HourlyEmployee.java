@@ -14,6 +14,7 @@ public class HourlyEmployee extends Employee {
     // fields
     private double rate;
     private double hours;
+    public static final double FEDERAL_MINIMUM_WAGE = 15.0;
 
     // constructors
     public HourlyEmployee() {
@@ -46,7 +47,10 @@ public class HourlyEmployee extends Employee {
         return rate;
     }
 
-    public void setRate(double rate) {
+    public void setRate(double rate) throws IllegalArgumentException {
+        if (rate < FEDERAL_MINIMUM_WAGE) {
+            throw new IllegalArgumentException("Minimum wage must be greater than equal to " + FEDERAL_MINIMUM_WAGE);
+        }
         this.rate = rate;
     }
 
