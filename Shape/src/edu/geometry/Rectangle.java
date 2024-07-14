@@ -14,6 +14,11 @@ public class Rectangle implements Shape {
         return length * width;
     }
 
+    @Override
+    public double getPerimeter() {
+        return 2 * (length + width);
+    }
+
     public int getLength() {
         return length;
     }
