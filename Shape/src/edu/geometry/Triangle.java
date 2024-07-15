@@ -1,13 +1,13 @@
 package edu.geometry;
 
 public class Triangle implements Shape {
-    private double side1;
-    private double side2;
-    private double angle;
+    private final double side1;
+    private final double side2;
+    private final double angle;
 
     public Triangle(double side1, double side2, double angle) throws IllegalArgumentException {
         if (side1 <= 0 || side2 <= 0 || angle <= 0) {
-            throw new IllegalArgumentException("Sides and angle cannot be negative");
+            throw new IllegalArgumentException("Sides and/or angle cannot be less than or equal to 0");
         }
         this.side1 = side1;
         this.side2 = side2;
@@ -16,7 +16,7 @@ public class Triangle implements Shape {
 
     @Override
     public double getArea() {
-        return 0.5 * side1 * side2 * Math.sin(angle);
+        return 0.5 * getSide1() * getSide2() * Math.sin(getAngle());
     }
 
     @Override

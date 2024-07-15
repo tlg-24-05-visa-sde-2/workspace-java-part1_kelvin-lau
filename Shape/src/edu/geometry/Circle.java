@@ -1,7 +1,7 @@
 package edu.geometry;
 
 public class Circle implements Shape {
-    private double radius;
+    private final double radius;
 
     public Circle(double radius) throws IllegalArgumentException {
         if (radius < 0) {
@@ -12,12 +12,12 @@ public class Circle implements Shape {
 
     @Override
     public double getArea() {
-        return Math.PI * radius * radius;
+        return Math.PI * getRadius() * getRadius();
     }
 
     @Override
     public double getPerimeter() {
-        return 2 * Math.PI * radius;
+        return 2 * Math.PI * getRadius();
     }
 
     public double getRadius() {

@@ -1,10 +1,10 @@
 package edu.geometry;
 
 public class Rectangle implements Shape {
-    private int length;
-    private int width;
+    private final double length;
+    private final double width;
 
-    public Rectangle(int length, int width) throws IllegalArgumentException {
+    public Rectangle(double length, double width) throws IllegalArgumentException {
         if (length < 0 || width < 0) {
             throw new IllegalArgumentException("Length and width should be non-negative");
         }
@@ -14,19 +14,19 @@ public class Rectangle implements Shape {
 
     @Override
     public double getArea() {
-        return length * width;
+        return getLength() * getWidth();
     }
 
     @Override
     public double getPerimeter() {
-        return 2 * (length + width);
+        return 2 * (getLength() + getWidth());
     }
 
-    public int getLength() {
+    public double getLength() {
         return length;
     }
 
-    public int getWidth() {
+    public double getWidth() {
         return width;
     }
 }
