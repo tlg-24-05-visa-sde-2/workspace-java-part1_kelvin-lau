@@ -3,7 +3,10 @@ package edu.geometry;
 public class Circle implements Shape {
     private double radius;
 
-    public Circle(double radius) {
+    public Circle(double radius) throws IllegalArgumentException {
+        if (radius < 0) {
+            throw new IllegalArgumentException("Radius cannot be negative");
+        }
         this.radius = radius;
     }
 

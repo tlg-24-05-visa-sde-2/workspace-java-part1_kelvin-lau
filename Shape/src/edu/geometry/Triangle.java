@@ -5,7 +5,10 @@ public class Triangle implements Shape {
     private double side2;
     private double angle;
 
-    public Triangle(double side1, double side2, double angle) {
+    public Triangle(double side1, double side2, double angle) throws IllegalArgumentException {
+        if (side1 <= 0 || side2 <= 0 || angle <= 0) {
+            throw new IllegalArgumentException("Sides and angle cannot be negative");
+        }
         this.side1 = side1;
         this.side2 = side2;
         this.angle = Math.toRadians(angle);

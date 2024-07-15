@@ -4,7 +4,10 @@ public class Rectangle implements Shape {
     private int length;
     private int width;
 
-    public Rectangle(int length, int width) {
+    public Rectangle(int length, int width) throws IllegalArgumentException {
+        if (length < 0 || width < 0) {
+            throw new IllegalArgumentException("Length and width should be non-negative");
+        }
         this.length = length;
         this.width = width;
     }
