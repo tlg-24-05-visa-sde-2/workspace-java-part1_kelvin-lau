@@ -83,7 +83,7 @@ public class InMemoryCatalog implements Catalog {
 
     @Override
     public Collection<MusicItem> getAll() {
-        return new ArrayList<>(catalogData);
+        return Collections.unmodifiableCollection(catalogData);
     }
 
     /**
@@ -130,7 +130,9 @@ public class InMemoryCatalog implements Catalog {
     public Collection<MusicItem> findRockLessThan(double price) {
         Collection<MusicItem> result = new ArrayList<>();
         for (MusicItem currItem : catalogData) {
-            if (currItem.getMusicCategory().equals(MusicCategory.ROCK) && currItem.getPrice() <= price) {
+            if ((currItem.getMusicCategory().equals(MusicCategory.ROCK)
+                    || currItem.getMusicCategory().equals(MusicCategory.CLASSIC_ROCK))
+                    && currItem.getPrice() <= price) {
                 result.add(currItem);
             }
         }
@@ -142,14 +144,7 @@ public class InMemoryCatalog implements Catalog {
      * TASK: how many items of the specified genre (MusicCategory) do we sell?
      */
     public int genreCount(MusicCategory category) {
-        int count = 0;
-        for (MusicItem currItem : catalogData) {
-            if (currItem.getMusicCategory().equals(category)) {
-                count++;
-            }
-        }
-
-        return count;
+        return findByCategory(category).size();
     }
 
     /**
@@ -226,7 +221,13 @@ public class InMemoryCatalog implements Catalog {
      * Just the titles!
      */
     public Collection<String> itemsWithGenre(MusicCategory category) {
-        return null;
+        Collection<MusicItem> items = findByCategory(category);
+        Collection<String> result = new TreeSet<>();
+        for (MusicItem currItem : items) {
+            result.add(currItem.getTitle());
+        }
+
+        return result;
     }
 
     /**
@@ -252,7 +253,6 @@ public class InMemoryCatalog implements Catalog {
      * sell, that key's associated value should be an empty collection, not null.
      */
     public Map<MusicCategory, Collection<MusicItem>> getGenreMap() {
-        Collection<MusicItem> items = new ArrayList<>();
         Map<MusicCategory, Collection<MusicItem>> genres = new HashMap<>();
 
         for (MusicItem currItem : catalogData) {

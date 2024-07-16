@@ -30,11 +30,13 @@ class InMemoryCatalogTest {
         // testFindByKeyword();
         // testFindByCategory();
         testSize();
-        // testGetAll();
+        testGetAll();
         testAllItemsAtLeastTen();
         testCheapestItemGenre();
         testEightiesItemsLessThan();
         testGetGenreMap();
+        testItemsWithGenre();
+        testFindRockLessThan();
     }
 
     private static void testFindById() {
@@ -92,5 +94,15 @@ class InMemoryCatalogTest {
     private static void testGetGenreMap() {
         InMemoryCatalog catalog = new InMemoryCatalog();
         System.out.println(catalog.getGenreMap());
+    }
+
+    private static void testItemsWithGenre() {
+        InMemoryCatalog catalog = new InMemoryCatalog();
+        System.out.println(catalog.itemsWithGenre(MusicCategory.ROCK));
+    }
+
+    private static void testFindRockLessThan() {
+        InMemoryCatalog catalog = new InMemoryCatalog();
+        System.out.println(catalog.findRockLessThan(12));
     }
 }
