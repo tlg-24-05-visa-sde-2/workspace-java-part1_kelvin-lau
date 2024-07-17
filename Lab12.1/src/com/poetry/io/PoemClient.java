@@ -9,6 +9,8 @@
 package com.poetry.io;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class PoemClient {
 
@@ -32,6 +34,10 @@ public class PoemClient {
      * Use a BufferedReader wrapped around a FileReader.
      * The try-with-resources below allows you to initialize the stream and auto-close it.
      */
+
+    /*
+    Older Method for Reading and Writing
+
     private static void readPoem() {
         // TODO: initialize 'reader' variable and complete the try block
         try (BufferedReader reader = new BufferedReader(new FileReader("famous-poem.txt"))) {
@@ -43,6 +49,17 @@ public class PoemClient {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+     */
+
+    private static void readPoem() {
+        try {
+            String poem = Files.readString(Path.of("famous-poem.txt"));
+            System.out.println(poem);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
     }
 
     /**
@@ -56,11 +73,28 @@ public class PoemClient {
      * Use a PrintWriter wrapped around a FileWriter.
      * Use a try-with-resources to initialize the stream and auto-close it.
      */
+
+    /*
+       private static void writePoem() {
+            try (PrintWriter writer = new PrintWriter(new FileWriter("haiku.txt"))) {
+                writer.println("Java is too fun");
+                writer.println("I code all day and all night");
+                writer.println("Compile time error");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+     */
+
     private static void writePoem() {
-        try (PrintWriter writer = new PrintWriter(new FileWriter("haiku.txt"))) {
-            writer.println("Java is too fun");
-            writer.println("I code all day and all night");
-            writer.println("Compile time error");
+        String haiku = """
+                Java is too fun
+                I code all day and all night
+                Compile time error
+                """;
+
+        try {
+            Files.writeString(Path.of("haiku.txt"), haiku);
         } catch (IOException e) {
             e.printStackTrace();
         }
